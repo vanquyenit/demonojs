@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/icon/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th colspan="6"><a href="/video/add" title="">Them video</a></th>
+            </tr>
+            <tr class="bg-primary">
+                <th>ID</th>
+                <th>Tieu de</th>
+                <th>Mo ta</th>
+                <th>Link</th>
+                <th>Anh</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(value){ %>
+            <tr>
+                <td><%= value.id %></td>
+                <td width="100"><%= value.title %></td>
+                <td width="100"><%= value.content %></td>
+                <td><%= value.link %></td>
+                <td><img src="../uploads/<%= value.image %>" alt="" /></td>
+                <td width="100">
+                    <a href="/delete/<%= value.id %>" title=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <a href="/video/edit/<%= value.id %>" title=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
